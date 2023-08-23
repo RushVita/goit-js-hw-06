@@ -1,15 +1,14 @@
 const input = document.querySelector("#font-size-control");
 const span = document.querySelector("#text");
 
-console.dir(input);
-// span.style.fontSize = '100px';
-console.log(span);
-
-input.addEventListener('input', handler);
-
+input.addEventListener("input", handler);
+input.value = '16';
 function handler(evt) {
-//    console.log(evt.currentTarget.value);
-        span.style.fontSize = `${evt.currentTarget.value}px`;
-//    console.log(span.style.fontSize);
-    
+  span.style.fontSize = `${evt.currentTarget.value}px`;
 }
+
+
+
+const list = document.querySelector('.list')
+
+console.log(list);

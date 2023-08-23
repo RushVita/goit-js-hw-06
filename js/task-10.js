@@ -12,26 +12,28 @@ const elements = {
 const { controls, createBtn, destroyBtn, box } = elements;
 
 createBtn.addEventListener("click", handlerCreate);
-
+let size = 30;
 function handlerCreate(evt) {
   const numbElem = controls.firstElementChild.value;
-  // console.log(numbElem);
-  function createBoxes(amount) {
-    for (let i = 0; i < numbElem; i++) {
-      const size = i * 10 + 30;
+  const arrDiv = [];
+  
+  for (let i = 0; i < numbElem; i++) {
+    const div = document.createElement("div");
+    div.style.width = `${size}px`;
+    div.style.height = `${size}px`;
+    div.style.backgroundColor = getRandomHexColor();
 
-      box.insertAdjacentHTML("beforeend", `<div> </div>`);
-      box.lastElementChild.style.backgroundColor = getRandomHexColor();
-      box.lastElementChild.style.width = `${size}px`;
-      box.lastElementChild.style.height = `${size}px`;
+    arrDiv.push(div);
 
-    }
+    size += 10;
   }
-  createBoxes(numbElem);
+  box.append(...arrDiv);
+  console.log(arrDiv);
 }
 
 destroyBtn.addEventListener("click", destroyBoxes);
 
 function destroyBoxes(evt) {
+  size = 30;
   box.innerHTML = "";
 }

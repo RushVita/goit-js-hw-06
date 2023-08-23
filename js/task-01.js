@@ -15,10 +15,9 @@ const arrItems = [...items]
 arrItems.forEach(function (elem) {
     const last = elem.lastElementChild;
     const child = [...last.children]
-    console.log("Category:", elem.firstElementChild.textContent,);
+    console.log("Category:", elem.firstElementChild.textContent);
     console.log("Elements:", child.length);
 })
-
 
 
 
