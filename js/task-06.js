@@ -8,5 +8,4 @@ function handler(evt) {
   } else {
     input.classList = "invalid";
   }
-  console.dir(input.classList);
 }

@@ -22,13 +22,10 @@ function handlerCreate(evt) {
     div.style.width = `${size}px`;
     div.style.height = `${size}px`;
     div.style.backgroundColor = getRandomHexColor();
-
     arrDiv.push(div);
-
     size += 10;
   }
   box.append(...arrDiv);
-  console.log(arrDiv);
 }
 
 destroyBtn.addEventListener("click", destroyBoxes);
